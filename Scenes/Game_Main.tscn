@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://cu6ok5yyteb2j"]
+[gd_scene load_steps=5 format=3 uid="uid://cu6ok5yyteb2j"]
+
+[ext_resource type="Script" path="res://Scripts/Game_Main.gd" id="1_kcthu"]
+[ext_resource type="PackedScene" uid="uid://ba3pp6fceq343" path="res://Scenes/Player.tscn" id="2_rhvfy"]
+[ext_resource type="PackedScene" uid="uid://caqqaot1qaopc" path="res://Scenes/Platform.tscn" id="3_rcexr"]
+[ext_resource type="PackedScene" uid="uid://jjigd0818ewk" path="res://Scenes/vegetables.tscn" id="4_np15n"]
 
 [node name="GameMain" type="Node2D"]
+script = ExtResource("1_kcthu")
+
+[node name="Player" parent="." instance=ExtResource("2_rhvfy")]
+position = Vector2(541, 283)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_rcexr")]
+
+[node name="Vegetables" parent="." instance=ExtResource("4_np15n")]
+position = Vector2(367, 271)
