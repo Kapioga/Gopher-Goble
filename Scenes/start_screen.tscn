@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://gekie6itfhei"]
+
+[ext_resource type="Texture2D" uid="uid://yjl2s5idrpga" path="res://icon.svg" id="1_hju1e"]
+[ext_resource type="Script" path="res://Scenes/start_screen.gd" id="1_nrq8w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ej6qv"]
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_8mmmm"]
+font_size = 60
+outline_size = 20
+outline_color = Color(0.541176, 0.227451, 0.286275, 1)
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_nrq8w")
+
+[node name="Test Logo" type="Sprite2D" parent="."]
+position = Vector2(415, 203)
+texture = ExtResource("1_hju1e")
+
+[node name="Label" type="Label" parent="Test Logo"]
+offset_left = -289.0
+offset_top = 50.0
+offset_right = 320.0
+offset_bottom = 163.0
+text = "GOPHER GOBLE"
+label_settings = SubResource("LabelSettings_ej6qv")
+
+[node name="Buttons" type="CanvasGroup" parent="."]
+
+[node name="PlayButton" type="Button" parent="Buttons"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 875.0
+offset_top = 167.0
+offset_right = 1275.0
+offset_bottom = 237.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.01492)
+
+[node name="Label" type="Label" parent="Buttons/PlayButton"]
+layout_mode = 1
+offset_left = 23.0
+offset_top = -37.4413
+offset_right = 167.0
+offset_bottom = 48.5587
+text = "PLAY"
+label_settings = SubResource("LabelSettings_8mmmm")
+
+[node name="QuitButton" type="Button" parent="Buttons"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 830.0
+offset_top = 274.0
+offset_right = 1230.0
+offset_bottom = 344.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.01492)
+
+[node name="Label" type="Label" parent="Buttons/QuitButton"]
+layout_mode = 1
+offset_left = 23.0
+offset_top = -37.4413
+offset_right = 167.0
+offset_bottom = 48.5587
+text = "QUIT"
+label_settings = SubResource("LabelSettings_8mmmm")
+
+[connection signal="pressed" from="Buttons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_quit_button_pressed"]

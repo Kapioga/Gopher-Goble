@@ -25,4 +25,10 @@ texture = ExtResource("2_jnavv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7jssq")
 
-[connection signal="body_entered" from="DetectVeggie" to="." method="_on_detect_veggie_body_entered"]
+[node name="Button" type="Button" parent="."]
+offset_left = 51.0
+offset_top = -8.0
+offset_right = 59.0
+text = "PRESS ME"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

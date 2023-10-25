@@ -44,7 +44,7 @@ func Emitgrab():
 	pass
 
 
+func _on_button_pressed():
+	velocity.y = JUMP_VELOCITY
+	print("Wow!")
 
-func _on_detect_veggie_body_entered(body):
-	if body.is_in_group("Veggie"):
-		print("Youve touched the butt!")
