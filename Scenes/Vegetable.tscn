@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnxg1bnc0uwse"]
+
+[ext_resource type="Script" path="res://Scripts/vegetables.gd" id="1_g6nu7"]
+[ext_resource type="Texture2D" uid="uid://yjl2s5idrpga" path="res://icon.svg" id="1_wcyx6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvhoe"]
+size = Vector2(20, 44)
+
+[sub_resource type="Animation" id="Animation_0wdvj"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -14), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wainr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jgyxc"]
+_data = {
+"Idle": SubResource("Animation_0wdvj"),
+"RESET": SubResource("Animation_wainr")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7b24k"]
+size = Vector2(28, 27)
+
+[node name="Veggie" type="AnimatableBody2D"]
+script = ExtResource("1_g6nu7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_wvhoe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_wcyx6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+libraries = {
+"": SubResource("AnimationLibrary_jgyxc")
+}
+
+[node name="Area2D" type="Area2D" parent="." groups=["Veggie"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7b24k")

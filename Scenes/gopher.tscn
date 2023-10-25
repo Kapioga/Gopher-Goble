@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca3pdihfb255"]
+
+[ext_resource type="Texture2D" uid="uid://yjl2s5idrpga" path="res://icon.svg" id="1_x60de"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8bfn"]
+size = Vector2(121, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fyyo"]
+size = Vector2(116, 122)
+
+[node name="Gopher" type="StaticBody2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x60de")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -0.5)
+shape = SubResource("RectangleShape2D_w8bfn")
+
+[node name="Detect food" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect food"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_1fyyo")
