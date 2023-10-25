@@ -1,20 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu6ok5yyteb2j"]
+[gd_scene load_steps=6 format=3 uid="uid://cu6ok5yyteb2j"]
 
 [ext_resource type="PackedScene" uid="uid://ba3pp6fceq343" path="res://Scenes/Player.tscn" id="2_rhvfy"]
 [ext_resource type="PackedScene" uid="uid://bnxg1bnc0uwse" path="res://Scenes/Vegetable.tscn" id="3_1isrd"]
 [ext_resource type="PackedScene" uid="uid://caqqaot1qaopc" path="res://Scenes/Platform.tscn" id="3_rcexr"]
 [ext_resource type="PackedScene" uid="uid://ca3pdihfb255" path="res://Scenes/gopher.tscn" id="4_nnyj8"]
+[ext_resource type="PackedScene" uid="uid://d3rjdb1ycdumj" path="res://temp_borders.tscn" id="5_prq3j"]
 
 [node name="GameMain" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_rhvfy")]
-position = Vector2(541, 283)
+position = Vector2(541, 438)
 
 [node name="Platform" parent="." instance=ExtResource("3_rcexr")]
-position = Vector2(599, 403)
+position = Vector2(599, 558)
 
 [node name="Veggie" parent="." instance=ExtResource("3_1isrd")]
-position = Vector2(626, 291)
+position = Vector2(626, 446)
 
 [node name="Gopher" parent="." instance=ExtResource("4_nnyj8")]
-position = Vector2(1107, 275)
+position = Vector2(1107, 430)
+
+[node name="TempBorders" parent="." instance=ExtResource("5_prq3j")]

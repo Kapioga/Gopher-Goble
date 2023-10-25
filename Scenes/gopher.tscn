@@ -19,7 +19,7 @@ texture = ExtResource("1_x60de")
 position = Vector2(-1.5, -0.5)
 shape = SubResource("RectangleShape2D_w8bfn")
 
-[node name="Detect food" type="Area2D" parent="."]
+[node name="Detect food" type="Area2D" parent="." groups=["Gopher"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect food"]
 position = Vector2(1, 0)

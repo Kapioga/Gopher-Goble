@@ -42,3 +42,9 @@ func crouch():
 
 func Emitgrab():
 	pass
+
+
+
+func _on_detect_veggie_body_entered(body):
+	if body.is_in_group("Veggie"):
+		print("Youve touched the butt!")

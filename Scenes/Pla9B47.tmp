@@ -3,20 +3,14 @@
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_y1cr8"]
 [ext_resource type="Texture2D" uid="uid://yjl2s5idrpga" path="res://icon.svg" id="2_jnavv"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jssq"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmrs2"]
 size = Vector2(62, 59)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jssq"]
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -13)
 script = ExtResource("1_y1cr8")
-
-[node name="DetectVeggie" type="Area2D" parent="." groups=["Player"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectVeggie"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_lmrs2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
@@ -24,5 +18,11 @@ texture = ExtResource("2_jnavv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7jssq")
+
+[node name="DetectVeggie" type="Area2D" parent="." groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectVeggie"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_lmrs2")
 
 [connection signal="body_entered" from="DetectVeggie" to="." method="_on_detect_veggie_body_entered"]

@@ -3,6 +3,9 @@
 [ext_resource type="Script" path="res://Scripts/vegetables.gd" id="1_g6nu7"]
 [ext_resource type="Texture2D" uid="uid://yjl2s5idrpga" path="res://icon.svg" id="1_wcyx6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7b24k"]
+size = Vector2(36, 34)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wvhoe"]
 size = Vector2(20, 44)
 
@@ -43,14 +46,16 @@ _data = {
 "RESET": SubResource("Animation_wainr")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7b24k"]
-size = Vector2(28, 27)
-
 [node name="Veggie" type="AnimatableBody2D"]
 script = ExtResource("1_g6nu7")
 
+[node name="Area2D" type="Area2D" parent="." groups=["Veggie"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7b24k")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_wvhoe")
 
@@ -63,9 +68,3 @@ autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_jgyxc")
 }
-
-[node name="Area2D" type="Area2D" parent="." groups=["Veggie"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_7b24k")
