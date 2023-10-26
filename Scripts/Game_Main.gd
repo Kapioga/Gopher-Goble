@@ -8,19 +8,14 @@ var score: int = 0
 
 
 func _ready():
-	leavepan()
+	pass
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 
-#Exits to splash screen
-func leavepan():
-	if Input.is_action_just_pressed("Exit"):
-		get_tree().change_scene_to_file("res://Scenes/start_screen.tscn")
-
 #Adds score to label
-func _on_score_detect_area_entered(area):
+func _on_score_detect_area_entered(_area):
 	var newscore = 1
 	score += newscore
 	label.text = str(score)
