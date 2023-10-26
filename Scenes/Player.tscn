@@ -26,6 +26,7 @@ texture = ExtResource("2_jnavv")
 shape = SubResource("RectangleShape2D_7jssq")
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 51.0
 offset_top = -8.0
 offset_right = 59.0

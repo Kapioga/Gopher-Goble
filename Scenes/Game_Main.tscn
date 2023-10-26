@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cu6ok5yyteb2j"]
+[gd_scene load_steps=8 format=3 uid="uid://cu6ok5yyteb2j"]
 
 [ext_resource type="Script" path="res://Scripts/Game_Main.gd" id="1_nodvi"]
 [ext_resource type="PackedScene" uid="uid://ba3pp6fceq343" path="res://Scenes/Player.tscn" id="2_rhvfy"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://caqqaot1qaopc" path="res://Scenes/Platform.tscn" id="3_rcexr"]
 [ext_resource type="PackedScene" uid="uid://ca3pdihfb255" path="res://Scenes/gopher.tscn" id="4_nnyj8"]
 [ext_resource type="PackedScene" uid="uid://d3rjdb1ycdumj" path="res://temp_borders.tscn" id="5_prq3j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jxgm"]
+size = Vector2(55, 69)
 
 [node name="GameMain" type="Node2D"]
 script = ExtResource("1_nodvi")
@@ -19,7 +22,20 @@ position = Vector2(599, 558)
 [node name="Veggie" parent="." instance=ExtResource("3_1isrd")]
 position = Vector2(626, 446)
 
+[node name="ScoreDetect" type="Area2D" parent="Veggie"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Veggie/ScoreDetect"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_4jxgm")
+
 [node name="Gopher" parent="." instance=ExtResource("4_nnyj8")]
 position = Vector2(1107, 430)
 
 [node name="TempBorders" parent="." instance=ExtResource("5_prq3j")]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 186.0
+offset_bottom = 67.0
+size_flags_horizontal = 4
+
+[connection signal="area_entered" from="Veggie/ScoreDetect" to="." method="_on_score_detect_area_entered"]
