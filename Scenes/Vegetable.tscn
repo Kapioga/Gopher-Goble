@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://yjl2s5idrpga" path="res://icon.svg" id="1_wcyx6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7b24k"]
-size = Vector2(36, 34)
+size = Vector2(26, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wvhoe"]
-size = Vector2(20, 44)
+size = Vector2(21, 33)
 
-[sub_resource type="Animation" id="Animation_0wdvj"]
-resource_name = "Idle"
+[sub_resource type="Animation" id="Animation_b20yg"]
+resource_name = "VeggieWiggle"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -22,10 +22,10 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -14), Vector2(0, 0)]
+"values": [Vector2(0, -8.05142), Vector2(0, -3), Vector2(0, -8.05142)]
 }
 
-[sub_resource type="Animation" id="Animation_wainr"]
+[sub_resource type="Animation" id="Animation_lblct"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -37,34 +37,36 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, -8.05142)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jgyxc"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oxv4h"]
 _data = {
-"Idle": SubResource("Animation_0wdvj"),
-"RESET": SubResource("Animation_wainr")
+"RESET": SubResource("Animation_lblct"),
+"VeggieWiggle": SubResource("Animation_b20yg")
 }
 
 [node name="Veggie" type="AnimatableBody2D"]
+position = Vector2(0, -5)
 script = ExtResource("1_g6nu7")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Veggie"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -1)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_7b24k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -1)
+position = Vector2(-0.5, -6.5)
 shape = SubResource("RectangleShape2D_wvhoe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8.05142)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_wcyx6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Idle"
+autoplay = "VeggieWiggle"
 libraries = {
-"": SubResource("AnimationLibrary_jgyxc")
+"": SubResource("AnimationLibrary_oxv4h")
 }

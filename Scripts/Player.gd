@@ -42,9 +42,3 @@ func crouch():
 
 func Emitgrab():
 	pass
-
-
-func _on_button_pressed():
-	velocity.y = JUMP_VELOCITY
-	print("Wow!")
-

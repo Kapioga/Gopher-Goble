@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d3rjdb1ycdumj" path="res://temp_borders.tscn" id="5_prq3j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4jxgm"]
-size = Vector2(55, 69)
+size = Vector2(38, 46)
 
 [node name="GameMain" type="Node2D"]
 script = ExtResource("1_nodvi")
@@ -20,12 +20,12 @@ position = Vector2(541, 438)
 position = Vector2(599, 558)
 
 [node name="Veggie" parent="." instance=ExtResource("3_1isrd")]
-position = Vector2(626, 446)
+position = Vector2(627, 429)
 
 [node name="ScoreDetect" type="Area2D" parent="Veggie"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Veggie/ScoreDetect"]
-position = Vector2(0, 1)
+position = Vector2(-1, -6)
 shape = SubResource("RectangleShape2D_4jxgm")
 
 [node name="Gopher" parent="." instance=ExtResource("4_nnyj8")]

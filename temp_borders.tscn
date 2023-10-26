@@ -1,15 +1,15 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3rjdb1ycdumj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbit7"]
-size = Vector2(55.5, 617)
+size = Vector2(29.5, 617)
 
 [node name="TempBorders" type="StaticBody2D"]
 position = Vector2(-35, 2)
 
 [node name="Left Barrier" type="CollisionShape2D" parent="."]
-position = Vector2(6.25, 306.5)
+position = Vector2(18, 307)
 shape = SubResource("RectangleShape2D_qbit7")
 
 [node name="Right Barrier" type="CollisionShape2D" parent="."]
-position = Vector2(1262, 303)
+position = Vector2(1253, 303)
 shape = SubResource("RectangleShape2D_qbit7")

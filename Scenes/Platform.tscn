@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://yjl2s5idrpga" path="res://icon.svg" id="1_ihswc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1ewx"]
-size = Vector2(1253, 122)
+size = Vector2(1253, 116)
 
 [node name="Platform" type="StaticBody2D"]
 
@@ -12,5 +12,5 @@ scale = Vector2(9.69141, 1)
 texture = ExtResource("1_ihswc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_g1ewx")
