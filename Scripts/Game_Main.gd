@@ -1,11 +1,14 @@
 extends Node2D
 
+@onready var veggie = $Veggie
+@onready var player = $Player
 @onready var label = $ScoreLabel
+
 var score: int = 0
 
 
 func _ready():
-	pass 
+	leavepan()
 
 func _process(delta):
 	pass
@@ -21,4 +24,3 @@ func _on_score_detect_area_entered(area):
 	var newscore = 1
 	score += newscore
 	label.text = str(score)
-

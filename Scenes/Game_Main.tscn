@@ -19,23 +19,28 @@ position = Vector2(541, 438)
 [node name="Platform" parent="." instance=ExtResource("3_rcexr")]
 position = Vector2(599, 558)
 
-[node name="Veggie" parent="." instance=ExtResource("3_1isrd")]
-position = Vector2(627, 429)
-
-[node name="ScoreDetect" type="Area2D" parent="Veggie"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Veggie/ScoreDetect"]
-position = Vector2(-1, -6)
-shape = SubResource("RectangleShape2D_4jxgm")
-
 [node name="Gopher" parent="." instance=ExtResource("4_nnyj8")]
 position = Vector2(1107, 430)
 
 [node name="TempBorders" parent="." instance=ExtResource("5_prq3j")]
+visible = false
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_right = 186.0
-offset_bottom = 67.0
+offset_right = 107.0
+offset_bottom = 78.0
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Veggie" parent="." instance=ExtResource("3_1isrd")]
+position = Vector2(709, 438)
+
+[node name="ScoreDetect" type="Area2D" parent="Veggie"]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Veggie/ScoreDetect"]
+position = Vector2(-1, -6)
+shape = SubResource("RectangleShape2D_4jxgm")
 
 [connection signal="area_entered" from="Veggie/ScoreDetect" to="." method="_on_score_detect_area_entered"]
