@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends RigidBody2D
 
 #@onready var player_p = get_node("res://Scenes/Player.tscn")
 #@onready var veggie = $"."

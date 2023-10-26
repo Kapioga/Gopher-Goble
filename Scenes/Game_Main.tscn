@@ -52,3 +52,6 @@ offset_bottom = 40.0
 script = ExtResource("7_g8tlq")
 
 [connection signal="area_entered" from="Veggie/ScoreDetect" to="." method="_on_score_detect_area_entered"]
+[connection signal="area_entered" from="Veggie/ScoreDetect" to="Player" method="_on_score_detect_veggie_entered"]
+
+[editable path="Player"]

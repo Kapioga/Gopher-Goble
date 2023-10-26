@@ -46,8 +46,9 @@ _data = {
 "VeggieWiggle": SubResource("Animation_b20yg")
 }
 
-[node name="Veggie" type="StaticBody2D"]
+[node name="Veggie" type="RigidBody2D" groups=["Veggie"]]
 position = Vector2(0, -5)
+gravity_scale = 0.0
 script = ExtResource("1_g6nu7")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Veggie"]]
