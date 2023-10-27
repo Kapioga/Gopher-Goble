@@ -10,13 +10,14 @@ const JUMP_VELOCITY = -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var grabbed = false
+@onready var sprite_2d = $Sprite2D
 
 func _physics_process(delta):
 	gravity_check(delta)
 	jump()
 	controls_dir()
 	crouch()
-
+	sprite_dir()
 	move_and_slide()
 
 func gravity_check(delta):
@@ -30,6 +31,15 @@ func controls_dir():
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+func sprite_dir():
+	#var player_turn =
+	if velocity.x >= 1:
+		sprite_2d.flip_h = true
+	if velocity.x <= 1:
+		sprite_2d.flip_h = false
+	elif velocity.x == 0:
+		sprite_2d.flip_h = true
+		
 func jump():
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY

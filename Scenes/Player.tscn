@@ -1,30 +1,28 @@
 [gd_scene load_steps=5 format=3 uid="uid://ba3pp6fceq343"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_y1cr8"]
-[ext_resource type="Texture2D" uid="uid://yjl2s5idrpga" path="res://icon.svg" id="2_jnavv"]
+[ext_resource type="Texture2D" uid="uid://d58fa2eoc84c" path="res://Assets/Characters/Puppet_still.png" id="2_h76jg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmrs2"]
-size = Vector2(42, 43)
+size = Vector2(58, 84)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jssq"]
-size = Vector2(37, 37)
+size = Vector2(220, 290)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -13)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_y1cr8")
 
 [node name="DetectVeggie" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectVeggie"]
-visible = false
-position = Vector2(0, 0.5)
+position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_lmrs2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_jnavv")
+texture = ExtResource("2_h76jg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-0.5, -0.5)
+position = Vector2(-2, 9)
 shape = SubResource("RectangleShape2D_7jssq")

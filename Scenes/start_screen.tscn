@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://gekie6itfhei"]
 
-[ext_resource type="Script" path="res://Scenes/start_screen.gd" id="1_nrq8w"]
+[ext_resource type="Script" path="res://Scripts/start_screen.gd" id="1_nrq8w"]
 [ext_resource type="Texture2D" uid="uid://mp8ndbxat5co" path="res://Assets/Splashscreen/Splash screen Gopher.png" id="2_rql08"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ej6qv"]

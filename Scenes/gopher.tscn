@@ -1,26 +1,27 @@
 [gd_scene load_steps=4 format=3 uid="uid://ca3pdihfb255"]
 
-[ext_resource type="Texture2D" uid="uid://yjl2s5idrpga" path="res://icon.svg" id="1_x60de"]
+[ext_resource type="Texture2D" uid="uid://dsc16k7pu6k5d" path="res://Assets/Characters/Kibble_still.png" id="1_60f7g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8bfn"]
-size = Vector2(121, 127)
+size = Vector2(538, 486)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fyyo"]
-size = Vector2(116, 122)
+size = Vector2(534, 488)
 
 [node name="Gopher" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_x60de")
+texture = ExtResource("1_60f7g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -0.5)
+position = Vector2(1, -11)
 shape = SubResource("RectangleShape2D_w8bfn")
 
 [node name="Detect food" type="Area2D" parent="." groups=["Gopher"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect food"]
-position = Vector2(1, 0)
+position = Vector2(1, -10)
 shape = SubResource("RectangleShape2D_1fyyo")
