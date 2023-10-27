@@ -32,7 +32,7 @@ func controls_dir():
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 func sprite_dir():
-	#var player_turn =
+	var player_turn = Input.is_just_action_pressed("L")
 	if velocity.x >= 1:
 		sprite_2d.flip_h = true
 	if velocity.x <= 1:
