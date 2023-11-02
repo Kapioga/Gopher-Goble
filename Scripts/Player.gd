@@ -17,7 +17,6 @@ func _physics_process(delta):
 	jump()
 	controls_dir()
 	crouch()
-	sprite_dir()
 	move_and_slide()
 
 func gravity_check(delta):
@@ -31,14 +30,6 @@ func controls_dir():
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-func sprite_dir():
-	var player_turn = Input.is_just_action_pressed("L")
-	if velocity.x >= 1:
-		sprite_2d.flip_h = true
-	if velocity.x <= 1:
-		sprite_2d.flip_h = false
-	elif velocity.x == 0:
-		sprite_2d.flip_h = true
 		
 func jump():
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
